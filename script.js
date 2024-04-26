@@ -1,22 +1,20 @@
-gsap.to(".box1",{
-    x:1000,
-    duration:2,
-    delay:1,
-    backgroundColor:"blue",
-    rotate:360,
-    scale:0.5,
-    borderRadius:"50%"
-})
-gsap.from(".box2",{
-    x:1000,
-    duration:2,
-    delay:1
-})
-gsap.from("h1",{
+
+var tl = gsap.timeline();
+tl.from(".navbar h2",{
+    y:-20,
     opacity:0,
-    y:30,
-    duration:2,
-    delay:1,
-    stagger:0.5,
-    repeat:2
+    duration:0.5,
+    delay:0.5
+})
+tl.from(".nav-list h4",{
+    y:-20,
+    opacity:0,
+    duration:0.5,
+    stagger:0.2
+})
+tl.from(".main h1",{
+    y:20,
+    opacity:0,
+    scale:0.5,
+    duration:0.5
 })
