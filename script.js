@@ -37,7 +37,7 @@ gsap.to(".main3 h1",{
         trigger:".main3",
         scroller:"body",
         start:"top 0%",
-        end:"top -100%",
+        end:"bottom center",
         // markers:true,
         scrub:2,
         pin:true
