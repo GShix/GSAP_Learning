@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     font-family: gilroy;
+    color: white;
+    box-sizing: border-box;
 }
 html,body{
     width: 100%;
@@ -9,13 +11,13 @@ html,body{
 }
 body{
     background-color: black;
-    color: white;
+    overflow-x: hidden;
 } 
 .navbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 10px 20px;
 }
 .navbar h2{
     cursor: pointer;
@@ -28,12 +30,45 @@ body{
 .nav-list h4{
     cursor: pointer;
 }
+.profile{
+    display: flex;
+    cursor: pointer;
+    width: 140px;
+    gap: 20px;
+}
+h4:hover{
+    color: rgb(159, 159, 154);
+}
 .main{
-    /* text-align: center; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main2{
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    padding: 5vw 0;
+    align-items: center;
+}
+.main3{
+    width: 100%;
+    height: 100%;
+    padding: 5vw 20px;
+    background-color:rgb(87, 160, 186);
+}
+.main3 h1{
+    font-size:30vw;
+    text-transform: uppercase;
+}
+.main4{
+    width: 100%;
+    height: 100%;
+    background-color:royalblue;
 }
