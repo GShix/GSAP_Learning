@@ -15,5 +15,6 @@
     - start
     - end
     - scrub: (1-5) or true/false - :true enables scrubbing effect, meaning the animation progresses according to the scrolling speed.
-    - pin - true pins the element while scrolling, and it unpins when the animation completes.
+    - pin - :true pins the element while scrolling, and it unpins when the animation completes.
+    
 }
