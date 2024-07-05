@@ -7,7 +7,7 @@
 > gsap.from("Targeted_Eelement",{style})
 - Define the starting values to animate from
 
-> Timeline()
+> timeline()
 - 
 
 ## Day 2:
@@ -19,3 +19,11 @@
                     - end:
                     - scrub: (1-5) or true/false - :true enables scrubbing effect, meaning the animation progresses according to the scrolling speed.
                 }
+
+## Day 3:
+                :{
+                    pin: to pin the element 
+                }
+> SVG Animation:
+- path, dets, dets.x, dets.y,attr:{}
+- easing 
