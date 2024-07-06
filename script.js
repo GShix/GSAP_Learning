@@ -103,3 +103,35 @@ navbar.addEventListener("mouseleave",()=>{
         scale:0
     })
 })
+
+
+//nav
+var menu = document.querySelector(".nav i")
+var cross = document.querySelector(".full i")
+var dam = gsap.to(".full",{
+    right:0,
+    duration:0.5
+})
+var dam1 = gsap.from(".full h4",{
+    x:500,
+    duration:.8,
+    stagger:.5,
+    opacity:0
+})
+var dam2=gsap.from(".full i",{
+    opacity:0,
+})
+dam.pause();
+dam1.pause();
+dam2.pause();
+menu.addEventListener("click",()=>{
+    dam.play();
+    dam1.play();
+    dam2.play();
+})
+
+cross.addEventListener("click",()=>{
+    dam.reverse();
+    dam1.reverse();
+    dam2.reverse();
+})
