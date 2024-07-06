@@ -50,7 +50,7 @@ gsap.from(".box2 p",{
 })
 
 gsap.to(".box3 h1",{
-    transform: "translateX(-180%)",
+    transform: "translateX(-70%)",
     scrollTrigger:{
         trigger:".box3",
         scroller:"body",
@@ -64,9 +64,9 @@ gsap.to(".box3 h1",{
 
 //for string
 var initialPath =`M 10 100 Q 255 100 490 100`
-var finalPath =`M 10 100 Q 255 100 490 100`
+var finalPath =`M 10 100 Q 240 100 490 100`
 
-var string = document.querySelector(".box2 .string")
+var string = document.querySelector(".string")
 string.addEventListener("mousemove",(dets)=>{
     path = `M 10 100 Q ${dets.x} ${dets.y} 490 100`
 
@@ -81,5 +81,25 @@ string.addEventListener("mouseleave",()=>{
         attr:{d:finalPath},
         ease:"elastic.out(1,0.2)",
         duration:1.3
+    })
+})
+
+var navbar = document.querySelector(".nav-list");
+var cursor = document.querySelector(".cursor");
+
+navbar.addEventListener("mousemove",(dets)=>{
+    cursor.innerHTML="Click"
+    gsap.to(cursor,{
+        x:dets.x,
+        y:dets.y,
+        duration:1,
+        ease:"back.out",
+        opacity:1,scale:1
+    })
+})
+navbar.addEventListener("mouseleave",()=>{
+    gsap.to(cursor,{
+        opacity:0,
+        scale:0
     })
 })

@@ -25,5 +25,8 @@
                     pin: to pin the element 
                 }
 > SVG Animation:
-- path, dets, dets.x, dets.y,attr:{}
+- path, dets, dets.x, dets.y,attr{}
 - easing 
+
+## Day 4: 
+> Custom Curosr
