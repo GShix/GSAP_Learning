@@ -14,12 +14,12 @@ tl.from(".nav-list h4",{
     stagger:0.3
 })
 
-tl.from(".box1 h2",{
-    y:10,
-    scale:0,
-    duration:1,
-    // repeat:-1
-})
+// tl.from(".box1 h2",{
+//     y:10,
+//     scale:0,
+//     duration:1,
+//     // repeat:-1
+// })
 
 
 gsap.from(".box2 h1",{
@@ -110,12 +110,12 @@ var menu = document.querySelector(".nav i")
 var cross = document.querySelector(".full i")
 var dam = gsap.to(".full",{
     right:0,
-    duration:0.5
+    duration:0.4
 })
 var dam1 = gsap.from(".full h4",{
     x:500,
-    duration:.8,
-    stagger:.5,
+    duration:.7,
+    stagger:.4,
     opacity:0
 })
 var dam2=gsap.from(".full i",{
@@ -134,4 +134,38 @@ cross.addEventListener("click",()=>{
     dam.reverse();
     dam1.reverse();
     dam2.reverse();
+})
+
+//text animation
+
+function breakText(){
+    var tech = document.querySelector(".box1 h1")
+var techText = tech.textContent
+var techSplitted =techText.split('')
+var halfofTech = techSplitted.length/2;
+var clutter= ""
+techSplitted.forEach((item,index)=>{
+    if(index<halfofTech){
+        clutter += `<span class="first">${item}</span>`
+    }else{
+        clutter += `<span class="second">${item}</span>`
+    }
+})
+tech.innerHTML= clutter
+}
+breakText();
+
+gsap.from(".box1 h1 .first",{
+    y:70,
+    opacity:0,
+    duration:.7,
+    delay:0.3,
+    stagger:0.15
+})
+gsap.from(".box1 h1 .second",{
+    y:70,
+    opacity:0,
+    duration:.7,
+    delay:0.3,
+    stagger:-0.15
 })

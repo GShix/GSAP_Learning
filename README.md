@@ -30,3 +30,8 @@
 
 ## Day 4: 
 > Custom Curosr
+
+## Day 5:
+> Text animation
+    - Text.split()
+    - forEach() = for classifying each splitted text

@@ -58,13 +58,20 @@ body{
     /* color: #559af8; */
     color: #fb7d39;
 }
-.box1 h2{
+.box1 h1{
     white-space: nowrap;
     position:absolute;
     text-align: center;
+    font-size: 50px;
     top: 50%;
     left: 50%;
+    /* background: red; */
+    color: #549CFB;
+    overflow: hidden;
     transform: translate(-50%,-50%);
+}
+.box1 h1 span{
+    display: inline-block;
 }
 .box2{
     position: relative;
