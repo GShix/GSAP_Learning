@@ -35,3 +35,10 @@
 > Text animation
     - Text.split()
     - forEach() = for classifying each splitted text
+
+## Day 6: 
+> Landing Page design
+> @font-face{
+    font-family:....,
+    srcc:url("");
+}
