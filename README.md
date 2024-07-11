@@ -35,3 +35,19 @@
 > Text animation
     - Text.split()
     - forEach() = for classifying each splitted text
+
+## Day 6: 
+> Landing Page design
+> @font-face{
+    font-family:....,
+    src:url("");
+}
+> services and elements
+- fixed elements design
+
+## Day 7:
+> GSAP: tl.from("nav h1, nav h4, hav button",{})
+> gsap.timeline({scrollTrigger})
+> tricks: 
+- from({},"one") > two animate to section together
+- from({},"-=1") > two set time to animate

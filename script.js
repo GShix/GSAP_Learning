@@ -1,171 +1,83 @@
-var tl = gsap.timeline()
+function page1Animation() {
+    var tl = gsap.timeline()
 
-tl.from(".navbar",{
-    y:-20,
-    duration:1,
-    opacity:0,
-    delay:1
-})
-
-tl.from(".nav-list h4",{
-    scale:0,
-    duration:0.5,
-    opacity:0,
-    stagger:0.3
-})
-
-// tl.from(".box1 h2",{
-//     y:10,
-//     scale:0,
-//     duration:1,
-//     // repeat:-1
-// })
-
-
-gsap.from(".box2 h1",{
-    x:400,
-    scale:0,
-    duration:2,
-    scrollTrigger:{
-        trigger:".box2 h1",
-        scroller:"body",
-        // markers:true,
-        start:"top 50%",
-        end:"top 60%",
-        scrub:2
-    }
-})
-gsap.from(".box2 p",{
-    x:-400,
-    scale:0,
-    duration:2,
-    scrollTrigger:{
-        trigger:".box2 p",
-        scroller:"body",
-        // markers:true,
-        start:"top 50%",
-        end:"top 60%",
-        scrub:2
-    }
-})
-
-gsap.to(".box3 h1",{
-    transform: "translateX(-70%)",
-    scrollTrigger:{
-        trigger:".box3",
-        scroller:"body",
-        // markers:true,
-        start:"top 10%",
-        end:"top -150%",
-        scrub:2,
-        pin:true
-    }
-})
-
-//for string
-var initialPath =`M 10 100 Q 255 100 490 100`
-var finalPath =`M 10 100 Q 240 100 490 100`
-
-var string = document.querySelector(".string")
-string.addEventListener("mousemove",(dets)=>{
-    path = `M 10 100 Q ${dets.x} ${dets.y} 490 100`
-
-    gsap.to("svg path",{
-        attr:{d:path},
-        duration:0.3,
-        ease:"power3.out"
+    tl.from("nav h1, nav h2, nav button", {
+        y: -40,
+        opacity: 0,
+        duration: .5,
+        delay: 1,
+        stagger: .12
     })
-})
-string.addEventListener("mouseleave",()=>{
-    gsap.to("svg path",{
-        attr:{d:finalPath},
-        ease:"elastic.out(1,0.2)",
-        duration:1.3
+
+    tl.from(".center-part1 h1", {
+        x: -200,
+        opacity: 0,
+        duration: .5
+    }, "-=.5")
+    tl.from(".center-part1 p", {
+        x: -200,
+        opacity: 0,
+        duration: 0.4
     })
-})
-
-var navbar = document.querySelector(".nav-list");
-var cursor = document.querySelector(".cursor");
-
-navbar.addEventListener("mousemove",(dets)=>{
-    cursor.innerHTML="Click"
-    gsap.to(cursor,{
-        x:dets.x,
-        y:dets.y,
-        duration:1,
-        ease:"back.out",
-        opacity:1,scale:1
+    tl.from(".center-part1 button", {
+        scale: 0,
+        opacity: 0
+    }, "-=.2")
+    tl.from(".center-part2 img", {
+        scale: 0.5,
+        opacity: 0,
+        duration: .6
+    }, "-=.7")
+    tl.from(".section-bottom1 img", {
+        y: 30,
+        opacity: 0,
+        stagger: 0.15,
+        duration: .5
     })
-})
-navbar.addEventListener("mouseleave",()=>{
-    gsap.to(cursor,{
-        opacity:0,
-        scale:0
-    })
-})
-
-
-//nav
-var menu = document.querySelector(".nav i")
-var cross = document.querySelector(".full i")
-var dam = gsap.to(".full",{
-    right:0,
-    duration:0.4
-})
-var dam1 = gsap.from(".full h4",{
-    x:500,
-    duration:.7,
-    stagger:.4,
-    opacity:0
-})
-var dam2=gsap.from(".full i",{
-    opacity:0,
-})
-dam.pause();
-dam1.pause();
-dam2.pause();
-menu.addEventListener("click",()=>{
-    dam.play();
-    dam1.play();
-    dam2.play();
-})
-
-cross.addEventListener("click",()=>{
-    dam.reverse();
-    dam1.reverse();
-    dam2.reverse();
-})
-
-//text animation
-
-function breakText(){
-    var tech = document.querySelector(".box1 h1")
-var techText = tech.textContent
-var techSplitted =techText.split('')
-var halfofTech = techSplitted.length/2;
-var clutter= ""
-techSplitted.forEach((item,index)=>{
-    if(index<halfofTech){
-        clutter += `<span class="first">${item}</span>`
-    }else{
-        clutter += `<span class="second">${item}</span>`
-    }
-})
-tech.innerHTML= clutter
 }
-breakText();
 
-gsap.from(".box1 h1 .first",{
-    y:70,
-    opacity:0,
-    duration:.7,
-    delay:0.3,
-    stagger:0.15
-})
-gsap.from(".box1 h1 .second",{
-    y:70,
-    opacity:0,
-    duration:.7,
-    delay:0.3,
-    stagger:-0.15
-})
+function page2Animation() {
+    var tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".section2",
+            scoller: "body",
+            markers: true,
+            start: "top 50%",
+            end: "top -30%",
+            scrub: 2
+        }
+    })
+
+    tl2.from(".services", {
+        y: 30,
+        opacity: 0,
+        duration: .5
+    })
+
+    //line1
+    tl2.from(".elm.left.line1", {
+        x: -200,
+        opacity: 0,
+        duration: 1
+    }, "one")
+    tl2.from(".elm.right.line1", {
+        x: 200,
+        opacity: 0,
+        duration: 1
+    }, "one")
+
+    //lin2
+    tl2.from(".elm.left.line2", {
+        x: -200,
+        opacity: 0,
+        duration: .6
+    }, "two")
+    tl2.from(".elm.right.line2", {
+        x: 200,
+        opacity: 0,
+        duration: 1
+    }, "two")
+}
+
+page1Animation();
+page2Animation();
